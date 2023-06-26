@@ -1,0 +1,48 @@
+body{
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+#page_header{
+    background-color: rgb(148, 110, 148);
+    margin: 0;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    
+}
+#navigation_bar{
+    list-style-type: none;
+    padding: 6px;
+    display: flex;
+    justify-content:space-evenly;
+}
+#navigation_bar li{
+    padding: 6px;
+}
+a:link, a:visited, a:hover{
+    text-decoration: none;
+    cursor: grab;
+    color: black;
+}
+a:active{
+    color: lightblue;
+}
+#part_two h2, #part_two p{
+    margin: 5px;
+    height: 50px;
+    font-size: medium;
+}
+img{
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+    margin-top: 10px;
+}
+#page_footer{
+    background-color: rgb(148, 110, 148);
+    height: 50px;
+}
+.container p{
+    margin: 0;
+    padding-top: 20px;
+}
