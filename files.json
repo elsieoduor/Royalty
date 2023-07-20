@@ -1,0 +1,30 @@
+{
+    "items": [
+      {
+        "type": "photo",
+        "src": "path/to/photo1.jpg",
+        "date": "2023-07-20",
+        "description": "Description for Photo 1"
+      },
+      {
+        "type": "photo",
+        "src": "path/to/photo2.jpg",
+        "date": "2023-07-21",
+        "description": "Description for Photo 2"
+      },
+      {
+        "type": "video",
+        "src": "path/to/video1.mp4",
+        "date": "2023-07-22",
+        "description": "Description for Video 1"
+      },
+      {
+        "type": "photo",
+        "src": "path/to/photo3.jpg",
+        "date": "2023-07-23",
+        "description": "Description for Photo 3"
+      }
+      // Add more media items here
+    ]
+  }
+  
