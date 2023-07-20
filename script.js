@@ -1,22 +1,17 @@
 const mediaContainer = document.getElementById('mediaContainer');
 const detailsContainer = document.getElementById('details');
 
-// Sample data for January (you can replace this with your data)
-const januaryData = [
-  {
-    type: 'photo',
-    src: 'path/to/photo.jpg',
-    date: 'January 1st',
-    description: 'Description for the photo on January 1st',
-  },
-  {
-    type: 'video',
-    src: 'path/to/video.mp4',
-    date: 'January 10th',
-    description: 'Description for the video on January 10th',
-  },
-  // Add more media items for January
-];
+
+async function fetchData() {
+  try {
+    const response = await fetch('mediaData.json');
+    const data = await response.json();
+    return data.items;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return [];
+  }
+}
 
 function displayDetails(data) {
   detailsContainer.innerHTML = `
@@ -34,17 +29,20 @@ function createMediaItem(item) {
   return mediaItem;
 }
 
-function populateGallery(monthData) {
-  mediaContainer.innerHTML = '';
-  monthData.forEach((item) => {
-    const mediaItem = createMediaItem(item);
-    mediaContainer.appendChild(mediaItem);
-  });
+async function populateGallery() {
+  const items = await fetchData();
+
+  if (items.length === 0) {
+    mediaContainer.innerHTML = '<p>No media items available.</p>';
+  } else {
+    mediaContainer.innerHTML = '';
+    items.forEach((item) => {
+      const mediaItem = createMediaItem(item);
+      mediaContainer.appendChild(mediaItem);
+    });
+  }
 }
 
-const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+populateGallery();
 
-months.forEach((month) => {
-  const monthDiv = document.querySelector(`.month:contains(${month})`);
-  monthDiv.addEventListener('click', () => populateGallery(januaryData)); // Replace januaryData with data for each month
-});
+  

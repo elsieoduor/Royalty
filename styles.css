@@ -21,7 +21,7 @@ body {
   
   .month {
     cursor: pointer;
-    background-color: #ddd;
+    background-color: #a8e6e6;
     padding: 10px;
     border-radius: 5px;
   }
@@ -44,4 +44,38 @@ body {
     margin-top: 20px;
     display: none;
   }
+
+.navbar {
+    background-color: #333;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    padding: 5px 0;
+  }
   
+  .months {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .month {
+    cursor: pointer;
+  }
+  
+  .month:active {
+    font-weight: bold;
+    background-color: #7cb47c;
+  }
+  
+  .header {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+  }
+  
+  .header h1 {
+    font-size: 24px;
+  }
+  
+    
